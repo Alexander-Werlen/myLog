@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import HabitTrackerApp from "./HabitTrackerComponents/HabitTrackerApp";
+import { Container, Row, Col } from 'react-bootstrap'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Container fluid>
+      <Row>
+        <Col xs={1}>nav</Col> 
+        <Col><HabitTrackerApp /></Col> {/* where the current app goes */}
+      </Row>
+    </Container>
+    
+    </>
   );
 }
 
