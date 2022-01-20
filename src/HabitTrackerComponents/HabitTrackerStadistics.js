@@ -8,7 +8,7 @@ import {useHabits} from "../contexts/HabitTrackerContext"
 
 export default function HabitTrackerStadistics() {
     
-    const {habits, activities} = useHabits()
+    const {habits} = useHabits()
     const [currentSelectedHabitId, setCurrentSelectedHabitId] = useState("")
 
     function getCurrentHabitName () {

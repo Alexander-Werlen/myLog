@@ -1,14 +1,27 @@
 import React from 'react'
 import {useHabits} from "../contexts/HabitTrackerContext"
-
+import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
+import moment from "moment"
 
 export default function HabitsGraphs() {
-    const {habits, activities} = useHabits()
+    const {habits, activities, createActivitiesUpToDate} = useHabits()
 
 
     return (
+
         <>
-        <h1>aw</h1>
+        
+        {
+            habits.map(habit => {
+                
+                
+                return (
+                    <h1 key={habit.id} >Graph of {habit.activityName}</h1>
+                    )
+            }
+                
+            )
+        }
 
         </>
     )
