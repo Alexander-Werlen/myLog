@@ -3,7 +3,9 @@ import HabitsStack from './HabitsStack'
 import { Row, Col, Button } from 'react-bootstrap'
 import {HabitsProvider} from "../contexts/HabitTrackerContext"
 import AddHabitModal from "./AddHabitModal"
+import AddTimeDoneModal from "./AddTimeDoneModal"
 import HabitTrackerStadistics from "./HabitTrackerStadistics"
+import moment from 'moment'
 
 
 export default function HabitTrackerApp() {
@@ -11,6 +13,7 @@ export default function HabitTrackerApp() {
 
     
     const [showAddHabitModal, setShowAddHabitModal] = useState(false)
+    const [showAddTimeDoneModal, setShowAddTimeDoneModal] = useState(false)
 
 
 
@@ -26,6 +29,7 @@ export default function HabitTrackerApp() {
                         </Col>
                         <Col xs={3}>
                             <Button onClick={() => setShowAddHabitModal(true)} variant="primary">Add Habit</Button>
+                            <Button onClick={() => setShowAddTimeDoneModal(true)} variant="primary">Add Activity</Button>
                         </Col>
                     </Row>
                     
@@ -38,7 +42,7 @@ export default function HabitTrackerApp() {
             </Row>
 
             <AddHabitModal show={showAddHabitModal} handleClose={() => setShowAddHabitModal(false)}></AddHabitModal>
-            
+            <AddTimeDoneModal show={showAddTimeDoneModal} handleClose={() => setShowAddTimeDoneModal(false)}></AddTimeDoneModal>
             </HabitsProvider>
             
 
