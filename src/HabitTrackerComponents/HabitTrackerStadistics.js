@@ -52,9 +52,11 @@ export default function HabitTrackerStadistics() {
                 <Row>
                     <Calendar onClickDay={(value, e) => console.log("Clicked day: "+value)}/>
                 </Row>
-                    <HabitsGraphs></HabitsGraphs>
                 <Row>
-
+                    <h2>Last 30 days of habit</h2>
+                </Row>
+                <Row>
+                    <HabitsGraphs></HabitsGraphs>
                 </Row>
             </Container>
 

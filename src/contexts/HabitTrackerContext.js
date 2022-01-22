@@ -99,15 +99,17 @@ export const HabitsProvider =  ({children}) => {
         })
     }
 
-    function changeActivityDoneValueByDate(date, habitId, value) {
+    function changeActivityDoneValueByDate({date, habitId, value}) {
     
         setActivities(prevActivities => {
             if (prevActivities.find(activity => activity.dateOfDay === date && activity.habitIdOfActivity === habitId)) {
-                return [prevActivities.filter(activity => activity.dateOfDay !== date || activity.habitIdOfActivity !== habitId), {id: uuid4(), dateOfToday: {date}, habitIdOfActivity: {habitId}, minutesDoneToday: {value}}]
-                    
+                console.log(prevActivities.filter(activity => activity.dateOfDay !== date || activity.habitIdOfActivity !== habitId))
+                return [...prevActivities.filter(activity => activity.dateOfDay !== date || activity.habitIdOfActivity !== habitId), {id: uuid4(), dateOfDay: date, habitIdOfActivity: habitId, minutesDone: value}]
                 
             } else {
-                console.log("Error: Day selected out of scope")
+                console.log("Error: Day not found")
+                return [...prevActivities]
+                //TODO: Add error alert
             } 
         })
     }
@@ -129,7 +131,6 @@ export const HabitsProvider =  ({children}) => {
         activities,
         changeActivityDoneValueByDate,
         getHabitActivities,
-        createActivitiesUpToDate
     }} >
         {children}
     </HabitsContext.Provider>)
