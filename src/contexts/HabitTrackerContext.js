@@ -109,6 +109,7 @@ export const HabitsProvider =  ({children}) => {
             } else {
                 console.log("Error: Day not found")
                 return [...prevActivities]
+                // Si el día que se quiere modificar está afuera de los días preexistentes entre hoy y el día de creación del habito.
                 //TODO: Add error alert
             } 
         })

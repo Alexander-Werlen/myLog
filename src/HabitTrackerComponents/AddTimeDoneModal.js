@@ -1,10 +1,10 @@
 import React, {useRef, useState} from 'react';
-import { Form, Button, Modal, Dropdown } from 'react-bootstrap'
+import { Form, Button, Modal } from 'react-bootstrap'
 import {useHabits} from "../contexts/HabitTrackerContext"
 import moment from "moment"
 
 export default function AddTimeDoneModal({show, handleClose, defHabitId}) {
-    const {habits, activities, changeActivityDoneValueByDate} = useHabits()
+    const {habits, changeActivityDoneValueByDate} = useHabits()
 
     const habitName = useRef(getCurrentHabitName(defHabitId))
     const minutesDone = useRef()

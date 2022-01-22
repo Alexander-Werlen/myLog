@@ -5,7 +5,7 @@ import {HabitsProvider} from "../contexts/HabitTrackerContext"
 import AddHabitModal from "./AddHabitModal"
 import AddTimeDoneModal from "./AddTimeDoneModal"
 import HabitTrackerStadistics from "./HabitTrackerStadistics"
-import moment from 'moment'
+
 
 
 export default function HabitTrackerApp() {
@@ -24,12 +24,14 @@ export default function HabitTrackerApp() {
             <Row>
                 <Col>
                     <Row>
-                        <Col>
-                            <h2>HABITS</h2>
+                        <Col >
+                            <h2>LISTA DE HABITOS</h2>
                         </Col>
-                        <Col xs={3}>
-                            <Button onClick={() => setShowAddHabitModal(true)} variant="primary">Add Habit</Button>
-                            <Button onClick={() => setShowAddTimeDoneModal(true)} variant="primary">Add Activity</Button>
+                        <Col xs={2}>
+                            <Button onClick={() => setShowAddHabitModal(true)} variant="primary">Añadir Habito</Button>
+                        </Col>
+                        <Col xs={2}>
+                            <Button onClick={() => setShowAddTimeDoneModal(true)} variant="primary">Añadir Actividad</Button>
                         </Col>
                     </Row>
                     
